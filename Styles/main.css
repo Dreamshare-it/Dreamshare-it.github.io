@@ -1,0 +1,1395 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* make sure to set some focus styles for accessibility */
+:focus {
+  outline: 0;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+input[type=search]::-webkit-search-cancel-button,
+input[type=search]::-webkit-search-decoration,
+input[type=search]::-webkit-search-results-button,
+input[type=search]::-webkit-search-results-decoration {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+input[type=search] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  box-sizing: content-box;
+}
+
+textarea {
+  overflow: auto;
+  vertical-align: top;
+  resize: vertical;
+}
+
+/**
+ * Correct `inline-block` display not defined in IE 6/7/8/9 and Firefox 3.
+ */
+audio,
+canvas,
+video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  max-width: 100%;
+}
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/**
+ * Address styling not present in IE 7/8/9, Firefox 3, and Safari 4.
+ * Known issue: no IE 6 support.
+ */
+[hidden] {
+  display: none;
+}
+
+/**
+ * 1. Correct text resizing oddly in IE 6/7 when body `font-size` is set using
+ *    `em` units.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+html {
+  font-size: 100%;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+}
+
+/**
+ * Address `outline` inconsistency between Chrome and other browsers.
+ */
+a:focus {
+  outline: thin dotted;
+}
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+a:active,
+a:hover {
+  outline: 0;
+}
+
+/**
+ * 1. Remove border when inside `a` element in IE 6/7/8/9 and Firefox 3.
+ * 2. Improve image quality when scaled in IE 7.
+ */
+img {
+  border: 0;
+  /* 1 */
+  -ms-interpolation-mode: bicubic;
+  /* 2 */
+}
+
+/**
+ * Address margin not present in IE 6/7/8/9, Safari 5, and Opera 11.
+ */
+figure {
+  margin: 0;
+}
+
+/**
+ * Correct margin displayed oddly in IE 6/7.
+ */
+form {
+  margin: 0;
+}
+
+/**
+ * Define consistent border, margin, and padding.
+ */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+/**
+ * 1. Correct color not being inherited in IE 6/7/8/9.
+ * 2. Correct text not wrapping in Firefox 3.
+ * 3. Correct alignment displayed oddly in IE 6/7.
+ */
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  white-space: normal;
+  /* 2 */
+  *margin-left: -7px;
+  /* 3 */
+}
+
+/**
+ * 1. Correct font size not being inherited in all browsers.
+ * 2. Address margins set differently in IE 6/7, Firefox 3+, Safari 5,
+ *    and Chrome.
+ * 3. Improve appearance and consistency in all browsers.
+ */
+button,
+input,
+select,
+textarea {
+  font-size: 100%;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+  vertical-align: baseline;
+  /* 3 */
+  *vertical-align: middle;
+  /* 3 */
+}
+
+/**
+ * Address Firefox 3+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+button,
+input {
+  line-height: normal;
+}
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Chrome, Safari 5+, and IE 6+.
+ * Correct `select` style inheritance in Firefox 4+ and Opera.
+ */
+button,
+select {
+  text-transform: none;
+}
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ * 4. Remove inner spacing in IE 7 without affecting normal text inputs.
+ *    Known issue: inner spacing remains in IE 6.
+ */
+button,
+html input[type=button],
+input[type=reset],
+input[type=submit] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */
+  *overflow: visible;
+  /* 4 */
+}
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+/**
+ * 1. Address box sizing set to content-box in IE 8/9.
+ * 2. Remove excess padding in IE 8/9.
+ * 3. Remove excess padding in IE 7.
+ *    Known issue: excess padding remains in IE 6.
+ */
+input[type=checkbox],
+input[type=radio] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+  *height: 13px;
+  /* 3 */
+  *width: 13px;
+  /* 3 */
+}
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ */
+input[type=search] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  /* 2 */
+  box-sizing: content-box;
+}
+
+/**
+ * Remove inner padding and search cancel button in Safari 5 and Chrome
+ * on OS X.
+ */
+input[type=search]::-webkit-search-cancel-button,
+input[type=search]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * Remove inner padding and border in Firefox 3+.
+ */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/**
+ * 1. Remove default vertical scrollbar in IE 6/7/8/9.
+ * 2. Improve readability and alignment in all browsers.
+ */
+textarea {
+  overflow: auto;
+  /* 1 */
+  vertical-align: top;
+  /* 2 */
+}
+
+/**
+ * Remove most spacing between table cells.
+ */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+html,
+button,
+input,
+select,
+textarea {
+  color: #222;
+}
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+img {
+  vertical-align: middle;
+}
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.chromeframe {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+body {
+  font-family: "Roboto";
+  font-size: 14px;
+}
+
+[class*=__container] {
+  max-width: 970px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+@media (max-width: 991.98px) {
+  [class*=__container] {
+    max-width: 750px;
+  }
+}
+@media (max-width: 767.98px) {
+  [class*=__container] {
+    max-width: 320px;
+  }
+}
+.wrapper {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.header-image {
+  background-image: url(../images/Header.png);
+  width: 1440px;
+  height: 700px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  background-color: rgba(11, 0, 0, 0.6509803922);
+  margin: 0 auto;
+}
+
+@media (max-width: 991.98px) {
+  .header-image {
+    background-size: cover;
+    height: 700px;
+    width: 768px;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 767.98px) {
+  .header-image {
+    background-size: cover;
+    height: 540px;
+    width: 320px;
+    margin: 0 auto;
+  }
+}
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.header__container .logo-botton {
+  height: 117px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__container .logo-botton .logo {
+  font-family: "Montserrat";
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0px;
+  text-align: left;
+  color: #FFFFFF;
+}
+.header__container .logo-botton .header-bottons {
+  width: 23%;
+  display: flex;
+}
+.header__container .logo-botton .header-bottons .bottons {
+  font-family: "Montserrat";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 17px;
+  letter-spacing: 0px;
+  text-align: left;
+  color: #FFFFFF;
+  width: 90px;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header__container .logo-botton .header-bottons .border {
+  border: 2px solid #FFFFFF;
+  border-radius: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 31px;
+}
+
+@media (max-width: 767.98px) {
+  .header__container .logo-botton {
+    flex-direction: column-reverse;
+    height: 205px;
+    justify-content: space-around;
+  }
+  .header__container .logo-botton .header-bottons {
+    width: 155px;
+  }
+  .logo{
+    margin-top: 42px;
+  }
+  .header__container .logo-botton .header-bottons .bottons {
+    color: #FFFFFF;
+  }
+}
+.header__container .header-mittel {
+  height: 463px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.header__container .header-mittel .mittel {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 51%;
+  width: 57%;
+}
+.header__container .header-mittel .mittel h1 {
+  font-family: "Montserrat";
+  font-size: 52px;
+  font-weight: 700;
+  line-height: 63px;
+  letter-spacing: 0px;
+  text-align: center;
+  color: #FFFFFF;
+}
+.header__container .header-mittel .mittel .header-text {
+  font-family: "Roboto";
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 25px;
+  letter-spacing: 0px;
+  text-align: center;
+  color: #FFFFFF;
+}
+.header__container .header-mittel .mittel .header-botton {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header__container .header-mittel .mittel .header-botton .botton {
+  background-color: #FF4E50;
+  width: 225px;
+  height: 40px;
+  border-radius: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+.header__container .header-mittel .mittel .header-botton .botton .botton-text {
+  font-family: "Montserrat";
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 17px;
+  letter-spacing: 0px;
+  text-align: center;
+  color: #FFFFFF;
+}
+@media (max-width: 1202px) {
+  .header__container {
+      margin: 0 65px;
+  }
+
+}
+@media (max-width: 991.98px) {
+  .header-bottons{
+    width: 27%;
+}
+.logo-botton{
+  width: 659px;
+}
+ .header-mittel{
+   width: 670px;
+ }
+ .header__container .header-mittel .mittel{
+  height: 55%;
+  width: 91%;
+}
+.header-info{
+  width: 701px;
+}
+.header__container{
+  margin: 0 34px;
+}
+}
+@media (max-width: 767.98px) {
+  .header__container .header-mittel {
+    justify-content: start;
+    width: 223px;
+    height: 471px;
+  }
+  .header-info{
+    width: 332px;
+  }
+  .logo-botton{
+    margin-bottom: 0px;
+    height: 175px;
+    width: 211px;
+  }
+  .header__container .header-mittel .mittel .header-text{
+    font-size: 20px;
+  }
+  .header__container .header-mittel .mittel {
+    width: 137%;
+    height: 38%;
+
+  }
+  .header-botton{
+    width: 104%;
+  }
+  .header__container .header-mittel .mittel h1 {
+    font-size: 30px;
+    line-height: 37px;
+  }
+  .header__container .header-mittel .mittel .header-botton {
+    width: 106%;
+  }
+  .header__container .header-mittel .mittel .header-botton .botton{
+    width: 278px;
+  }
+}
+
+
+.dreamshare__container {
+  display: flex;
+  flex-direction: column;
+}
+.dreamshare__container h2 {
+  width: 100%;
+  height: 121px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  font-family: "Montserrat";
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 32px;
+  letter-spacing: 0px;
+  counter-reset: #000;
+}
+.dreamshare__container .steps {
+  width: 100%;
+  height: 435px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.dreamshare__container .steps .steps-content {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  justify-content: space-around;
+  width: 100%;
+  height: 49%;
+  padding: 20px;
+}
+.dreamshare__container .steps .steps-content .step-botton {
+  width: 70px;
+  height: 20px;
+  border-radius: 40px;
+  background-color: #FF4E50;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Montserrat";
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 12px;
+  letter-spacing: 2px;
+  text-align: left;
+  color: #FFFFFF;
+}
+.dreamshare__container .steps .steps-content .step-header {
+  font-family: "Montserrat";
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 26px;
+  letter-spacing: 0px;
+  text-align: left;
+  color: #FFFFFF;
+}
+.dreamshare__container .steps .steps-content .step-info {
+  font-family: "Roboto";
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 14px;
+  letter-spacing: 0px;
+  text-align: left;
+  color: #FFFFFF;
+}
+.dreamshare__container .steps .step-1,
+.dreamshare__container .steps .step-2,
+.dreamshare__container .steps .step-3 {
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 300px;
+  height: 400px;
+  display: flex;
+  align-items: flex-end;
+}
+.dreamshare__container .steps .step-1 {
+  background-image: url(../images/Step\ 1.png);
+}
+.dreamshare__container .steps .step-2 {
+  background-image: url(../images/Step\ 2.png);
+}
+.dreamshare__container .steps .step-3 {
+  background-image: url(../images/Step\ 3.png);
+}
+@media (max-width: 991.98px) {
+  .dreamshare__container .steps {
+    height: 435px;
+  }
+  .dreamshare__container .steps .step-1,
+.dreamshare__container .steps .step-2,
+.dreamshare__container .steps .step-3 {
+    width: 232px;
+    height: 400px;
+    background-size: cover;
+  }
+  .dreamshare__container .steps .step-1 .steps-content,
+.dreamshare__container .steps .step-2 .steps-content,
+.dreamshare__container .steps .step-3 .steps-content {
+    height: 55%;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .dreamshare__container h2 {
+    font-size: 22px;
+    line-height: 27px;
+    text-align: center;
+    height: 60px;
+  }
+  .dreamshare__container .steps {
+    flex-direction: column;
+    height: 735px;
+    margin-top: 20px;
+  }
+  .dreamshare__container .steps .step-1,
+.dreamshare__container .steps .step-2,
+.dreamshare__container .steps .step-3 {
+    width: 300px;
+    height: 240px;
+    background-position: center;
+  }
+  .dreamshare__container .steps .step-1 .steps-content,
+.dreamshare__container .steps .step-2 .steps-content,
+.dreamshare__container .steps .step-3 .steps-content {
+    height: 87%;
+  }
+}
+.partner__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.partner__container h2 {
+  width: 100%;
+  height: 121px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  font-family: "Montserrat";
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 32px;
+  letter-spacing: 0px;
+  counter-reset: #000;
+}
+.partner__container .partners {
+  display: flex;
+  justify-content: space-between;
+  width: 96%;
+  margin-top: 30px;
+  height: 265px;
+  padding-top: 10px;
+}
+.partner__container .partners .group-1,
+.partner__container .partners .group-2 {
+  display: flex;
+}
+.partner__container .partners .group-1 .partner-1,
+.partner__container .partners .group-1 .partner-2,
+.partner__container .partners .group-1 .partner-3,
+.partner__container .partners .group-1 .partner-4,
+.partner__container .partners .group-2 .partner-1,
+.partner__container .partners .group-2 .partner-2,
+.partner__container .partners .group-2 .partner-3,
+.partner__container .partners .group-2 .partner-4 {
+  width: 221px;
+  height: 205px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+.partner__container .partners .group-1 .partner-1 .one,
+.partner__container .partners .group-1 .partner-1 .two,
+.partner__container .partners .group-1 .partner-1 .three,
+.partner__container .partners .group-1 .partner-1 .four,
+.partner__container .partners .group-1 .partner-2 .one,
+.partner__container .partners .group-1 .partner-2 .two,
+.partner__container .partners .group-1 .partner-2 .three,
+.partner__container .partners .group-1 .partner-2 .four,
+.partner__container .partners .group-1 .partner-3 .one,
+.partner__container .partners .group-1 .partner-3 .two,
+.partner__container .partners .group-1 .partner-3 .three,
+.partner__container .partners .group-1 .partner-3 .four,
+.partner__container .partners .group-1 .partner-4 .one,
+.partner__container .partners .group-1 .partner-4 .two,
+.partner__container .partners .group-1 .partner-4 .three,
+.partner__container .partners .group-1 .partner-4 .four,
+.partner__container .partners .group-2 .partner-1 .one,
+.partner__container .partners .group-2 .partner-1 .two,
+.partner__container .partners .group-2 .partner-1 .three,
+.partner__container .partners .group-2 .partner-1 .four,
+.partner__container .partners .group-2 .partner-2 .one,
+.partner__container .partners .group-2 .partner-2 .two,
+.partner__container .partners .group-2 .partner-2 .three,
+.partner__container .partners .group-2 .partner-2 .four,
+.partner__container .partners .group-2 .partner-3 .one,
+.partner__container .partners .group-2 .partner-3 .two,
+.partner__container .partners .group-2 .partner-3 .three,
+.partner__container .partners .group-2 .partner-3 .four,
+.partner__container .partners .group-2 .partner-4 .one,
+.partner__container .partners .group-2 .partner-4 .two,
+.partner__container .partners .group-2 .partner-4 .three,
+.partner__container .partners .group-2 .partner-4 .four {
+  width: 120px;
+  height: 120px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.partner__container .partners .group-1 .partner-1 .one,
+.partner__container .partners .group-1 .partner-2 .one,
+.partner__container .partners .group-1 .partner-3 .one,
+.partner__container .partners .group-1 .partner-4 .one,
+.partner__container .partners .group-2 .partner-1 .one,
+.partner__container .partners .group-2 .partner-2 .one,
+.partner__container .partners .group-2 .partner-3 .one,
+.partner__container .partners .group-2 .partner-4 .one {
+  background-image: url(../images/Avatar-music.png);
+}
+.partner__container .partners .group-1 .partner-1 .two,
+.partner__container .partners .group-1 .partner-2 .two,
+.partner__container .partners .group-1 .partner-3 .two,
+.partner__container .partners .group-1 .partner-4 .two,
+.partner__container .partners .group-2 .partner-1 .two,
+.partner__container .partners .group-2 .partner-2 .two,
+.partner__container .partners .group-2 .partner-3 .two,
+.partner__container .partners .group-2 .partner-4 .two {
+  background-image: url(../images/Avatar-paint.png);
+}
+.partner__container .partners .group-1 .partner-1 .three,
+.partner__container .partners .group-1 .partner-2 .three,
+.partner__container .partners .group-1 .partner-3 .three,
+.partner__container .partners .group-1 .partner-4 .three,
+.partner__container .partners .group-2 .partner-1 .three,
+.partner__container .partners .group-2 .partner-2 .three,
+.partner__container .partners .group-2 .partner-3 .three,
+.partner__container .partners .group-2 .partner-4 .three {
+  background-image: url(../images/Avatar-photo.png);
+}
+.partner__container .partners .group-1 .partner-1 .four,
+.partner__container .partners .group-1 .partner-2 .four,
+.partner__container .partners .group-1 .partner-3 .four,
+.partner__container .partners .group-1 .partner-4 .four,
+.partner__container .partners .group-2 .partner-1 .four,
+.partner__container .partners .group-2 .partner-2 .four,
+.partner__container .partners .group-2 .partner-3 .four,
+.partner__container .partners .group-2 .partner-4 .four {
+  background-image: url(../images/Photo-travel.png);
+}
+.partner__container .partners .group-1 .partner-name,
+.partner__container .partners .group-2 .partner-name {
+  font-family: "Montserrat";
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 17px;
+  letter-spacing: 0px;
+  text-align: center;
+  color: #444444;
+}
+.partner__container .partners .group-1 .partner-info,
+.partner__container .partners .group-2 .partner-info {
+  font-family: "Roboto";
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 14px;
+  letter-spacing: 0px;
+  text-align: center;
+  color: #666666;
+}
+.partner__container .partner-botton {
+  width: 180px;
+  height: 40px;
+  border-radius: 40px;
+  border: #FF4E50 2px solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.partner__container .partner-botton .more-partners {
+  color: #FF4E50;
+  font-family: "Montserrat";
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 17px;
+  letter-spacing: 0px;
+  text-align: left;
+  text-decoration: none;
+}
+@media (max-width: 991.98px) {
+
+  .partner__container .partners {
+    display: flex;
+    justify-content: space-around;
+    width: 71%;
+    margin-top: 30px;
+    height: 510px;
+  }
+  .partner__container .partners .group-1,
+.partner__container .partners .group-2 {
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 41px;
+  }
+}
+
+@media (max-width: 767.98px) {
+ 
+  .partner .partner__container h2 {
+    font-size: 22px;
+    line-height: 27px;
+    text-align: center;
+    height: 91px;
+  }
+  .partner .partner__container .partners {
+    flex-direction: column;
+    height: 898px;
+  }
+  .partner .partner__container .partners .partner-1,
+.partner .partner__container .partners .partner-2,
+.partner .partner__container .partners .partner-3,
+.partner .partner__container .partners .partner-4 {
+    margin-bottom: 10px;
+  }
+  .partner .partner__container .partners .partner-botton {
+    margin-left: -55px;
+  
+  }
+  .partner__container .partner-botton {
+    width: 276px;
+    margin-top: 10px;
+  }
+}
+.activity__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 1082px;
+  margin-top: 30px;
+}
+
+.activity__container h2{
+  width: 100%;
+  height: 121px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  font-family: 'Montserrat';
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 32px;
+  letter-spacing: 0px;
+  margin-bottom: 29px;
+}
+.activity__container .image-text {
+  font-family: "Montserrat";
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 27px;
+  letter-spacing: 0px;
+  text-align: center;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+.activity__container .image-1,
+.activity__container .image-2,
+.activity__container .image-3,
+.activity__container .image-4,
+.activity__container .image-5,
+.activity__container .image-6,
+.activity__container .image-7 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  background: #D8D8D8;
+}
+.activity__container .images-1 {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+.activity__container .images-1 .image-1 {
+  background-image: url(../images/Sport-1.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 300px;
+  height: 310px;
+}
+.activity__container .images-1 .image-2 {
+  background-image: url(../images/Bitmap-2.png);
+  background-size: contain;
+  width: 300px;
+  height: 310px;
+  background-repeat: no-repeat;
+}
+.activity__container .images-1 .image-3 {
+  background-image: url(../images/Bitmap-3.png);
+  background-size: contain;
+  width: 300px;
+  height: 310px;
+  background-repeat: no-repeat;
+}
+.activity__container .images-2 {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+.activity__container .images-2 .image-4 {
+  background-image: url(../images/Bitmap-4.png);
+  background-size: contain;
+  width: 300px;
+  height: 310px;
+  background-repeat: no-repeat;
+}
+.activity__container .images-2 .image-5 {
+  background-image: url(../images/Culture-5.png);
+  background-size: contain;
+  width: 620px;
+  height: 310px;
+  background-repeat: no-repeat;
+}
+.activity__container .images-3 {
+  display: flex;
+  justify-content: space-between;
+}
+.activity__container .images-3 .image-6 {
+  background-image: url(../images/Bitmap-6.png);
+  background-size: contain;
+  width: 620px;
+  height: 310px;
+  background-repeat: no-repeat;
+}
+.activity__container .images-3 .image-7 {
+  background-image: url(../images/Bitmap-7.png);
+  background-size: contain;
+  width: 300px;
+  height: 310px;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 991.98px) {
+  .activity__container {
+    height: 1082px;
+    align-items: center;
+  }
+  .activity__container .images-1 {
+    width: 748px;
+  }
+  .activity__container .images-1 .image-1,
+.activity__container .images-1 .image-2,
+.activity__container .images-1 .image-3 {
+    width: 236px;
+    height: 310px;
+    background-size: cover;
+  }
+  .activity__container .images-2 {
+    width: 748px;
+  }
+  .activity__container .images-2 .image-4 {
+    width: 236px;
+    height: 310px;
+    background-size: cover;
+  }
+  .activity__container .images-2 .image-5 {
+    width: 492px;
+    height: 310px;
+    background-size: cover;
+  }
+  .activity__container .images-3 {
+    width: 748px;
+  }
+  .activity__container .images-3 .image-7 {
+    width: 236px;
+    height: 310px;
+    background-size: cover;
+  }
+  .activity__container .images-3 .image-6 {
+    width: 492px;
+    height: 310px;
+    background-size: cover;
+  }
+}
+@media (max-width: 767.98px) {
+  .activity__container {
+    height: 968px;
+  }
+  .activity__container h2{
+    width: 69%;
+    height: 63px;
+    font-size: 23px;
+  }
+  .activity__container .images-1,
+.activity__container .images-2,
+.activity__container .images-3 {
+    flex-direction: column;
+    width: 299px;
+  }
+  .activity__container .images-1 .image-1,
+.activity__container .images-1 .image-2,
+.activity__container .images-1 .image-3,
+.activity__container .images-1 .image-4,
+.activity__container .images-1 .image-5,
+.activity__container .images-1 .image-6,
+.activity__container .images-1 .image-7,
+.activity__container .images-2 .image-1,
+.activity__container .images-2 .image-2,
+.activity__container .images-2 .image-3,
+.activity__container .images-2 .image-4,
+.activity__container .images-2 .image-5,
+.activity__container .images-2 .image-6,
+.activity__container .images-2 .image-7,
+.activity__container .images-3 .image-1,
+.activity__container .images-3 .image-2,
+.activity__container .images-3 .image-3,
+.activity__container .images-3 .image-4,
+.activity__container .images-3 .image-5,
+.activity__container .images-3 .image-6,
+.activity__container .images-3 .image-7 {
+    width: 300px;
+    height: 120px;
+    background-size: cover;
+    margin-bottom: 10px;
+    background-position: center;
+  }
+  .activity__container .images-1 .image-3,
+  .activity__container .images-2 .image-5{
+    margin-bottom: 0px;
+  }
+  .activity__container .images-1 .image-1,
+.activity__container .images-2 .image-1,
+.activity__container .images-3 .image-1 {
+    background-position: bottom;
+  }
+  .activity__container .images-1 .image-7,
+.activity__container .images-2 .image-7,
+.activity__container .images-3 .image-7 {
+    background-position: top;
+  }
+  
+}
+.create__container {
+  height: 367px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.create__container .create-info{
+  height: 163px;
+  
+}
+.create__container h2 {
+  width: 100%;
+  height: 37px;
+  display: flex;
+  justify-content: center;
+  font-family: "Montserrat";
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 32px;
+  letter-spacing: 0px;
+  counter-reset: #000;
+}
+.create__container .search-area {
+  height: 90px;
+  margin-top: 43px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.create__container .search-area .search-header {
+  font-family: "Roboto";
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 14px;
+  letter-spacing: 0px;
+  text-align: center;
+  color: #666666;
+}
+.create__container .search-area .search-actions {
+  height: 40px;
+  display: flex;
+  width: 483px;
+  justify-content: space-between;
+}
+.create__container .search-area .search-actions .search {
+  width: 299px;
+  height: 40px;
+  border: 1px solid #D4D4D4;
+  border-radius: 3px;
+}
+.create__container .search-area .search-actions .search-botton {
+  width: 172.3px;
+  height: 40px;
+  border-radius: 40px;
+  background-color: #FF4E50;
+  display: inline-block;
+}
+.create__container .search-area .search-actions .search-botton .search-text {
+  color: #FFFFFF;
+  font-family: "Montserrat";
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 17px;
+  letter-spacing: 0px;
+  text-align: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  height: 100%;
+}
+
+
+@media (max-width: 767.98px) {
+
+  .create__container .create-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 247px;
+  }
+  .create__container .create-info h2 {
+    width: 280px;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 27px;
+    letter-spacing: 0px;
+    text-align: center;
+    height: 62px;
+  }
+  .create__container .create-info .search-area {
+    width: 320px;
+    height: 177px;
+    align-items: center;
+    margin-top: 0px;
+  }
+  .create__container .create-info .search-area .search-actions {
+    height: 137px;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 45px;
+  }
+  .create__container .search-area .search-actions .search-botton{
+    width: 280px;
+  }
+}
+.footer {
+  border-top: red 2px solid;
+}
+.footer .footer__container {
+  display: flex;
+  justify-content: space-between;
+  height: 237px;
+}
+.footer .footer__container  .footer-info{
+  width: 970px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 36px;
+}
+.footer .footer__container .logo-footer {
+  font-family: "Montserrat";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0px;
+  text-align: left;
+  color: #FF4E50;
+}
+.footer .footer__container .footer-header {
+  font-family: "Montserrat";
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 26px;
+  letter-spacing: 0px;
+  text-align: left;
+  color: #444444;
+ 
+}
+.footer .footer__container .footer-company {
+  font-family: "Roboto";
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 26px;
+  letter-spacing: 0px;
+  text-align: left;
+  color: #999999;
+  width: 111px;
+}
+
+.footer .footer__container .partners{
+   width: 233px;
+}
+@media (max-width: 991.98px){
+  .footer .footer__container .partners{
+    width: 76px;
+ }
+}
+.footer .footer__container .design {
+  justify-content: space-between;
+  height: 46px;
+  flex-direction: column;
+  display: flex;
+  width: 105px;
+}
+.footer .footer__container .design .design-info {
+  font-family: "Montserrat";
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 12px;
+  letter-spacing: 0px;
+  text-align: right;
+  color: #CCCCCC;
+}
+.footer .footer__container .design .design-logo {
+  background-image: url(../images/Design.png);
+  width: 110px;
+  height: 24px;
+  background-size: contain;
+}
+
+
+@media (max-width: 991.98px){
+  .footer-info{
+    height: 970px;
+  }
+  .logo-footer{
+    margin-left: 15px;
+    margin-top: 0;
+  }
+  .company{
+    width: 62px;
+  }
+  .partners{
+    width: 76px;
+  }
+  .designed{
+    margin-right: 20px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .footer{
+    margin-top: -77px;
+    height: 294px;
+  }
+  .footer__container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 287px;
+    align-items: center;
+  }
+
+  .company {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 43px;
+  }
+  .company .company-info {
+    width: 294px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    height: 62px;
+    flex-direction: column;
+  }
+  .footer .footer__container .footer-info{
+    width: 145px;
+    flex-direction: column;
+    margin-top: 22px;
+  }
+  .footer .footer__container .partners{
+    width: 76px;
+    margin-left: 37px;
+    height: 39px;
+  }
+.footer-company{
+  width: 50px;
+}
+  .designed {
+    margin-bottom: 20px;
+    margin-left: 15px;
+    margin-top: -11px;
+  }
+}

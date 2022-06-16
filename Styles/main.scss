@@ -1,0 +1,766 @@
+@import 'base/base';
+@import 'base/extands';
+@import 'base/mixins';
+@import 'base/variables';
+
+body {
+    font-family: 'Roboto';
+    font-size: 14px;
+}
+
+[class*="__container"] {
+    max-width: 970px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+@media (max-width: 991.98px) {
+    [class*="__container"] {
+        max-width: 750px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    [class*="__container"] {
+        max-width: 320px;
+    }
+}
+
+.wrapper {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+.header-image {
+    background-image: url(../images/Header.png);
+    @include size (1440px 700px);
+    @include image (cover no-repeat);
+    background-position: top;
+    background-color: #0b0000a6;
+    margin: 0 auto;
+  
+}
+
+@media (max-width: 1209.98px) {
+    .header-image {
+        background-size: cover;
+        @include size (768px 700px);
+        margin: 0 auto;       
+    }
+
+}
+
+@media (max-width: 991.98px) {
+    .header-image {
+        background-size: cover;
+        @include size (768px 700px);
+        margin: 0 auto;
+    }
+
+}
+
+@media (max-width: 767.98px) {
+    .header-image {
+        background-size: cover;
+        @include size (540px 320px);
+        margin: 0 auto;
+    }
+
+}
+.header__container {
+    @include flex (flex column space-between);
+
+    .logo-botton {
+        height: 117px;
+        @include flex (flex row space-between);
+        align-items: center;
+
+
+        .logo {
+            @include text ('Montserrat' 20px 700 24px 0px left);
+            color: $bakground-color
+        }
+
+
+
+        .header-bottons {
+            width: 23%;
+            display: flex;
+
+            .bottons {
+                @include text ('Montserrat' 14px 400 17px 0px left);
+                color: $bakground-color;
+                width: 90px;
+                text-decoration: none;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .border {
+                border: 2px solid $bakground-color;
+                border-radius: 40px;
+                @include flex (flex row center);
+                align-items: center;
+                height: 31px;
+            }
+        }
+
+    }
+
+    @media (max-width: 767.98px) {
+        .logo-botton {
+            @include flex (flex column-reverse space-around);
+            margin-bottom: -25px;
+            height: 292px;
+
+            .header-bottons {
+                width: 155px;
+
+                .bottons {
+                    color: $bakground-color;
+                }
+            }
+        }
+
+    }
+
+
+    .header-mittel {
+        height: 463px;
+        @include flex (flex column center);
+        align-items: center;
+
+        .mittel {
+            @include flex (flex column space-between);
+            @include size (57% 51%);
+
+            h1 {
+                @include text ('Montserrat' 52px 700 63px 0px center);
+                color: $bakground-color;
+            }
+
+            .header-text {
+                @include text ('Roboto' 24px 300 25px 0px center);
+                color: $bakground-color;
+
+            }
+
+            .header-botton {
+                @include size (100% 40px);
+                @include flex (flex row center);
+                align-items: center;
+
+                .botton {
+                    background-color: $color;
+                    @include size (225px 40px);
+                    @include flex (flex row center);
+                    border-radius: 40px;
+                    align-items: center;
+                    text-decoration: none;
+
+
+                    .botton-text {
+                        @include text ('Montserrat' 14px 700 17px 0px center);
+                        color: $bakground-color;
+
+
+                    }
+
+
+                }
+            }
+
+        }
+
+
+    }
+    @media (max-width: 767.98px) {
+        .header-mittel {
+            justify-content: start;
+
+            .mittel {
+                @include size (100% 39%);
+
+                h1 {
+                    font-size: 30px;
+                    line-height: 37px;
+
+                }
+            }
+        }
+
+
+
+    }
+
+}
+@media (max-width: 991.98px) {
+    .header-bottons{
+        width: 27%;
+    }
+    .header-mittel{
+      width: 681px;
+    }
+     .mittel{
+       height: 55%;
+       width: 91%;
+     }
+   }
+
+.dreamshare__container {
+    display: flex;
+    flex-direction: column;
+
+    h2 {
+        @extend %h2;
+    }
+
+    .steps {
+        @include size (100% 435px);
+        @include flex (flex row space-between);
+        align-items: flex-end;
+
+        .steps-content {
+            @include flex (flex column space-around);
+            align-items: baseline;
+            @include size (100% 49%);
+            padding: 20px;
+
+            .step-botton {
+                @include size (70px 20px);
+                border-radius: 40px;
+                background-color: $color;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                @include text ('Montserrat' 10px 400 12px 2px left);
+                color: $bakground-color;
+
+            }
+
+            .step-header {
+                @include text ('Montserrat' 24px 700 26px 0px left);
+                color: $bakground-color;
+
+            }
+
+            .step-info {
+                @include text ('Roboto' 14px 300 14px 0px left);
+                color: $bakground-color
+
+            }
+
+        }
+
+        .step-1,
+        .step-2,
+        .step-3 {
+            @include image (contain no-repeat);
+            @include size (300px 400px);
+            display: flex;
+            align-items: flex-end;
+        }
+
+        .step-1 {
+            background-image: url(../images/Step\ 1.png);
+        }
+
+        .step-2 {
+            background-image: url(../images/Step\ 2.png);
+
+        }
+
+        .step-3 {
+            background-image: url(../images/Step\ 3.png);
+        }
+    }
+
+    @media (max-width: 991.98px) {
+        .steps {
+            height: 373px;
+
+            .step-1,
+            .step-2,
+            .step-3 {
+                @include size (228px 311px);
+
+                .steps-content {
+                    height: 67%;
+                }
+            }
+        }
+    }
+
+
+}
+
+@media (max-width: 767.98px) {
+    .dreamshare__container {
+
+        h2 {
+            font-size: 22px;
+            line-height: 27px;
+            text-align: center;
+
+        }
+
+        .steps {
+            flex-direction: column;
+            height: 1230px;
+            margin-top: 20px;
+
+            .step-1,
+            .step-2,
+            .step-3 {
+                @include size (100% 100%);
+
+                .steps-content {
+                    height: 47%;
+                }
+            }
+
+
+        }
+    }
+}
+
+.partner__container {
+    @include flex (flex column);
+    align-items: center;
+
+    h2 {
+        @extend %h2;
+    }
+
+    .partners {
+        @include flex (flex row space-between);
+        @include size (96% 265px);
+        margin-top: 30px;
+        padding-top: 10px;
+
+        .group-1,
+        .group-2 {
+            display: flex;
+
+            .partner-1,
+            .partner-2,
+            .partner-3,
+            .partner-4 {
+                @include size (221px 205px);
+                @include flex (flex column space-between);
+                align-items: center;
+
+                .one,
+                .two,
+                .three,
+                .four {
+                    @include size (120px 120px);
+                    @include image (contain no-repeat);
+
+                }
+
+                .one {
+                    background-image: url(../images/Avatar-music.png);
+                }
+
+                .two {
+                    background-image: url(../images/Avatar-paint.png);
+                }
+
+                .three {
+                    background-image: url(../images/Avatar-photo.png);
+                }
+
+                .four {
+                    background-image: url(../images/Photo-travel.png);
+                }
+
+            }
+
+            .partner-name {
+                @include text ('Montserrat' 14px 700 17px 0px center);
+                color: #444444;
+
+            }
+
+            .partner-info {
+                @include text ('Roboto' 14px 300 14px 0px center);
+                color: #666666;
+
+            }
+
+        }
+    }
+
+    .partner-botton {
+        @include size (180px 40px);
+        border-radius: 40px;
+        border: $color 2px solid;
+        @include flex (flex row center);
+        align-items: center;
+
+        .more-partners {
+            color: $color;
+            @include text ('Montserrat' 14px 700 17px 0px left);
+            text-decoration: none;
+
+        }
+    }
+
+    @media (max-width: 991.98px) {
+        .partners {
+            @include flex (flex row space-around);
+            @include size (105% 460px);
+            margin-top: 30px;
+
+            .group-1,
+            .group-2 {
+                flex-direction: column;
+            }
+        }
+    }
+
+
+
+}
+
+@media (max-width: 767.98px) {
+    .partner {
+        .partner__container {
+            padding-left: 55px;
+
+
+            h2 {
+                font-size: 22px;
+                line-height: 27px;
+                text-align: center;
+            }
+
+            .partners {
+                flex-direction: column;
+                height: 955px;
+
+                .partner-1,
+                .partner-2,
+                .partner-3,
+                .partner-4 {
+                    margin-bottom: 10px;
+                }
+
+                .partner-botton {
+                    margin-left: -55px;
+                }
+            }
+        }
+    }
+}
+
+.activity__container {
+    @include flex (flex column space-between);
+    height: 965px;
+    margin-top: 30px;
+
+    h2{
+        @extend %h2;
+    }
+
+    .image-text {
+        @include text ('Montserrat' 22px 700 27px 0px center);
+        color: $bakground-color;
+        text-decoration: none;
+    }
+
+    .image-1,
+    .image-2,
+    .image-3,
+    .image-4,
+    .image-5,
+    .image-6,
+    .image-7 {
+        @include flex (flex row center);
+        @include image (contain no-repeat);
+        align-items: center;
+        text-decoration: none;
+    }
+
+    .image-1,
+    .image-2,
+    .image-3,
+    .image-4,
+    .image-7 {
+        @include size (300px 310px);
+    }
+
+    .image-5,
+    .image-6 {
+        @include size (620px 310px);
+    }
+
+    .images-1,
+    .images-2{
+        margin-bottom: 15px;
+    }
+
+    .images-1,
+    .images-2,
+    .images-3 {
+        @include flex (flex row space-between);
+
+
+        .image-1 {
+            background-image: url(../images/Sport-1.png);
+        }
+
+        .image-2 {
+            background-image: url(../images/Bitmap-2.png);
+        }
+
+        .image-3 {
+            background-image: url(../images/Bitmap-3.png);
+        }
+
+
+        .image-4 {
+            background-image: url(../images/Bitmap-4.png);
+        }
+
+        .image-5 {
+            background-image: url(../images/Culture-5.png);
+        }
+
+        .image-6 {
+            background-image: url(../images/Bitmap-6.png);
+        }
+
+        .image-7 {
+            background-image: url(../images/Bitmap-7.png);
+        }
+    }
+}
+
+@media (max-width: 991.98px) {
+
+    .activity__container {
+        height: 777px;
+        align-items: center;
+
+        .images-1,
+        .images-2,
+        .images-3 {
+            width: 748px;
+
+            .image-1,
+            .image-2,
+            .image-3,
+            .image-4,
+            .image-7 {
+                @include size (236px 245px);
+            }
+
+            .image-5,
+            .image-6 {
+                @include size (492px 245px);
+            }
+        }
+    }
+}
+
+@media (max-width: 767.98px) {
+
+    .activity__container {
+        height: 911px;
+
+        .images-1,
+        .images-2,
+        .images-3 {
+            flex-direction: column;
+            width: 299px;
+
+            .image-1,
+            .image-2,
+            .image-3,
+            .image-4,
+            .image-5,
+            .image-6,
+            .image-7 {
+                @include size (300px 120px);
+                background-size: cover;
+                margin-bottom: 10px;
+                background-position: center;
+            }
+
+            .image-1 {
+                background-position: bottom;
+            }
+
+            .image-7 {
+                background-position: top;
+            }
+        }
+
+    }
+}
+
+.create__container {
+    height: 367px;
+    @include flex (flex row center);
+    align-items: center;
+
+    h2 {
+       @extend %h2;
+    }
+    .create-info{
+        height: 169px;
+    }
+
+    .search-area {
+        height: 90px;
+        margin-top: 43px;
+        @include flex (flex column space-around);
+        align-items: center;
+
+        .search-header {
+            @include text ('Roboto' 18px 300 14px 0px center);
+            color: #666666;
+
+        }
+
+        .search-actions {
+            @include size (483px 40px);
+            @include flex (flex row space-between);
+
+            .search {
+                @include size (299px 40px);
+                border: 1px solid #D4D4D4;
+                border-radius: 3px;
+            }
+
+            .search-botton {
+                @include size (172.3px 40px);
+                border-radius: 40px;
+                background-color: $color;
+                display: inline-block;
+
+                .search-text {
+                    color: $bakground-color;
+                    @include text ('Montserrat' 14px 700 17px 0px left);
+                    @include flex (flex row center);
+                    align-items: center;
+                    text-decoration: none;
+                    height: 100%;
+                }
+
+            }
+        }
+    }
+}
+
+@media (max-width: 767.98px) {
+    .create__container {
+        .create-info {
+            @include flex (flex column center);
+            align-items: center;
+
+            h2 {
+                @extend %h2;
+
+            }
+
+            .search-area {
+                @include size (320px 153px);
+                align-items: center;
+
+                .search-actions {
+                    height: 154px;
+                    flex-direction: column;
+                    align-items: center;
+                    margin-top: 25px;
+                }
+            }
+        }
+    }
+}
+
+.footer {
+    border-top: $color 2px solid;
+
+    .footer__container {
+        @include flex (flex row space-between);
+        height: 237px;
+
+.partners{
+    width: 233px;
+}
+        .footer-info{
+            width: 970px;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 36px;
+        }
+
+        .logo-footer {
+            @include text ('Montserrat' 16px 400 20px 0px left);
+            color: $color;
+
+        }
+
+        .footer-header {
+            @include text ('Montserrat' 14px 700 26px 0px left);
+            color: #444444;
+        }
+
+        .footer-company {
+            @include text ('Roboto' 14px 300 26px 0px left);
+            color: #999999;
+            width: 111px;
+
+        }
+
+        .design {
+            @include flex (flex column space-between);
+            @include size (105px 46px);
+
+
+            .design-info {
+                @include text ('Montserrat' 10px 700 12px 0px right);
+                color: #CCCCCC;
+
+            }
+
+            .design-logo {
+                background-image: url(../images/Design.png);
+                @include size (110px 24px);
+                background-size: contain;
+            }
+        }
+    }
+}
+
+@media (max-width: 767.98px) {
+    .footer__container {
+        @include flex (flex column space-between);
+        height: 285px;
+        align-items: center;
+
+
+    }
+
+    .company {
+        @include flex (flex column);
+        align-items: center;
+
+        .company-info {
+            @include size (187px 62px);
+            @include flex (flex row space-between);
+            flex-wrap: wrap;
+            align-items: center;
+        }
+    }
+
+    .designed {
+        margin-bottom: 20px;
+    }
+}
